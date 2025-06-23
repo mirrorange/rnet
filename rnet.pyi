@@ -69,7 +69,6 @@ class WebSocketParams(TypedDict, closed=True):
     accept_unmasked_frames: NotRequired[bool]
 
 class ProxyParams(TypedDict, closed=True):
-    url: str
     username: NotRequired[str]
     password: NotRequired[str]
     custom_http_auth: NotRequired[str]
@@ -1418,7 +1417,7 @@ class Proxy:
     """
 
     @staticmethod
-    def http(**kwargs: Unpack[ProxyParams]) -> Proxy:
+    def http(url: str, **kwargs: Unpack[ProxyParams]) -> Proxy:
         r"""
         Creates a new HTTP proxy.
 
@@ -1443,7 +1442,7 @@ class Proxy:
         """
 
     @staticmethod
-    def https(**kwargs: Unpack[ProxyParams]) -> Proxy:
+    def https(url: str, **kwargs: Unpack[ProxyParams]) -> Proxy:
         r"""
         Creates a new HTTPS proxy.
 
@@ -1468,7 +1467,7 @@ class Proxy:
         """
 
     @staticmethod
-    def all(**kwargs: Unpack[ProxyParams]) -> Proxy:
+    def all(url: str, **kwargs: Unpack[ProxyParams]) -> Proxy:
         r"""
         Creates a new proxy for all protocols.
 
