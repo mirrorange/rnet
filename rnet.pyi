@@ -68,14 +68,13 @@ class WebSocketParams(TypedDict, closed=True):
     max_frame_size: NotRequired[int]
     accept_unmasked_frames: NotRequired[bool]
 
-class ProxyParams(TypedDict, total=False, closed=True):
-    scheme: NotRequired[str]
-    host: NotRequired[str]
-    port: NotRequired[int]
+class ProxyParams(TypedDict, closed=True):
+    url: str
     username: NotRequired[str]
     password: NotRequired[str]
-    rdns: NotRequired[bool]
-    headers: NotRequired[Union[Dict[str, str], HeaderMap]]
+    custom_http_auth: NotRequired[str]
+    custom_http_headers: NotRequired[Union[Dict[str, str], HeaderMap]]
+    exclusion: NotRequired[str]
 
 class BlockingClient:
     r"""
