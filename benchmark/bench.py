@@ -439,7 +439,7 @@ def main():
         all_results += run_sync_tests(sync_packages, url, requests_number)
         all_results += run_async_tests(async_packages, url, requests_number)
 
-        for threads in thread_counts[1:]:
+        for threads in thread_counts:
             all_results += run_threaded_tests(
                 sync_packages, url, requests_number, threads
             )
@@ -450,6 +450,4 @@ def main():
 
 
 if __name__ == "__main__":
-    # df = pd.read_csv("benchmark_results.csv")
-    # plot_benchmark_multi(df, "benchmark_multi.jpg")
     main()
