@@ -6,3 +6,8 @@ rnet
 curl_cffi
 aiohttp
 pycurl
+uvicorn
+starlette
+matplotlib
+pandas
+seaborn

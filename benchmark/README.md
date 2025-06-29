@@ -1,5 +1,4 @@
-Benchmark
-======
+# Benchmark
 
 benchmark between rnet and other python http clients
 
@@ -27,3 +26,16 @@ Target
 
 
 All the clients run with session/client enabled.
+
+## Run benchmark
+
+```bash
+# Install dependencies  
+pip install -r requirements.txt
+
+# Start server
+python server.py
+
+# Start benchmark
+python bench.py
+```
